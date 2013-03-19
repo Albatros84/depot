@@ -1,0 +1,23 @@
+class HomeController < ApplicationController
+ before_filter :set_client, :only => [:index]
+ # before_filter set_oauth
+  def logout
+  #  session[:access_token] = nil
+  end
+
+  def index
+   @oauth.url_for_oauth_code(:permissions => 'create_event, user_events, rsvp_event')# and return unless params[:code] #@client.authorize_url(:scope=>'create_event, user_events, rsvp_event') and return unless params[:code]
+     @token=@oauth.get_app_access_token  
+  #  @friends = @graph.get_connections("me", "friends")                        
+  end
+    
+    
+    
+  private
+
+  def set_client
+    @oauth = Koala::Facebook::OAuth.new('351184084930846', '69b84b32efc8bbcc8b14cfa2013083d7', 'http://localhost:3000')
+          
+  end
+   
+end

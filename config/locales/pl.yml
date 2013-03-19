@@ -1,0 +1,101 @@
+#START:layout
+#START:main
+#START:cart
+#START:currency
+#START:checkout
+#START:flash
+pl:
+
+#END:cart
+#END:checkout
+#END:flash
+#END:main
+#END:layout
+  number:
+    currency:
+      format:
+        unit:      "zł"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%n%u"
+#END:currency
+
+#START:layout
+  layouts:
+    application:
+      title:       "Praktyczny Księgozbiór"
+      home:        "Strona Główna"
+      questions:   "Zadaj pytanie"
+      news:        "Nowości"
+      contact:     "Kontakt"
+      login_as_admin: "Zaloguj jako admin"
+      orders: "Zamówienia"
+      users: "Użytkownicy"
+      products: "Produkty"
+      logout: "Wyloguj"
+#END:layout
+  admin:
+    index:
+      link: "Strona Główna"
+
+#START:cart
+  carts:
+    cart:
+      title:       "Twój koszyk"
+      empty:       "Opróżnij Koszyk"
+      checkout:    "Zamów"
+#END:cart
+
+#START:main
+  store:
+    index:
+      title_html:  "Katalog książek dla Ciebie"
+      add_html:    "Dodaj do Koszyka"
+#END:main
+
+#START:checkout
+  orders:
+    new:
+      order_new: "Nowe Zamówienie"
+      legend:       "Wpisz swoje dane"
+    form:
+      name:         "Imię"
+      address_html: "Adres"
+      email:        "E-mail"
+      pay_type:     "Sposób płatności"
+      pay_prompt_html: "Wybierz sposób płatności"
+      submit:       "Złóż zamówienie"
+#END:checkout
+  
+  line_items:
+    line_item: 
+      remove: "Usuń"
+
+#START:flash
+  thanks:          "Dziękujemy za zamówienie"
+#END:flash
+  
+  activerecord:
+    models:
+      order: "zamówienia"
+    attributes:
+      order:
+        address: "adres"
+        name: "imię"
+        email: "email"
+        pay_type: "sposób płatności"        
+    errors:
+      messages:
+        inclusion: "nie zawiera dozwolonej wartości"
+        blank: "nie może pozostać pusty"
+  errors:
+    template:
+      body: "wystąpiły następujące problemy:"
+      header:
+        one:  "1 błąd uniemożliwił żeby %{model} został zapisany"
+        other: "%{count} błędy uniemożliwiły zapisanie %{model}"     
+
+
+
+
